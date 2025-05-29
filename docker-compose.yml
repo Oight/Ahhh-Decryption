@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  custom64:
+    build: .
+    container_name: custom64_app
+    restart: always
+    ports:
+      - "80:5000"
+    volumes:
+      - ./logs:/app/logs      # 可选：映射日志目录
+    environment:
+      - FLASK_ENV=production
+      - LOG_LEVEL=info
